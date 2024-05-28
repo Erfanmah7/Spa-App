@@ -4,6 +4,8 @@ import Courses from "./pages/Courses";
 import AboutUs from "./pages/AboutUs";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
+import PageNotFound from "./pages/PageNotFound";
+import Programmer from "./components/Programmer";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
           <Route path="/courses" element={<Courses />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<Product />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/about-us" element={<AboutUs />}>
+            <Route path="programmer" element={<Programmer />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
