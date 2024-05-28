@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import NavBar from "../components/NavBar";
 
 function Courses() {
   return (
-    <div>Courses</div>
-  )
+    <div>
+      <NavBar />
+      <h1>Courses</h1>
+    </div>
+  );
 }
 
-export default Courses
+export default Courses;
