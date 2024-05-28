@@ -18,3 +18,14 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.active {
+  color: blueviolet;
+}
