@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import HomePage from "./HomePage";
 
 const myProducts = [
   { id: 1, name: "products-1" },
@@ -11,6 +12,11 @@ const myProducts = [
 ];
 
 function Products() {
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <NavBar />
@@ -22,6 +28,7 @@ function Products() {
           </li>
         ))}
       </ul>
+      <button onClick={clickHandler}>Go Home</button>
     </div>
   );
 }
