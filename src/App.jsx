@@ -20,6 +20,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/about-us" element={<AboutUs />}>
             <Route path="programmer" element={<Programmer />} />
+            <Route path="user" element={<div>User</div>} />
           </Route>
         </Routes>
       </BrowserRouter>

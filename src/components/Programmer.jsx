@@ -1,14 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Programmer() {
-  return ( 
+  return (
     <div>
-      <ul>
-        <li>
-          <Link>Programmer</Link>
-        </li>
-      </ul>
+      <p>Programmer</p>
     </div>
   );
 }
