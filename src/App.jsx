@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Courses from "./pages/Courses";
 import AboutUs from "./pages/AboutUs";
@@ -12,7 +12,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/landing" element={<Navigate to="/" replace />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<Product />} />
