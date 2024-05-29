@@ -1,7 +1,6 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import { Link, useNavigate } from "react-router-dom";
-import HomePage from "./HomePage";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const myProducts = [
   { id: 1, name: "products-1" },
@@ -12,15 +11,27 @@ const myProducts = [
 ];
 
 function Products() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortBy = searchParams.get("sortBy");
+  const order = searchParams.get("order");
+  console.log(searchParams.toString()); //sortBy=price&order=des
+  console.log({ sortBy, order }); //{ sortBy: "price", order: "des" }
+
   const navigate = useNavigate();
   const clickHandler = () => {
     navigate("/");
+  };
+
+  const sortHandler = () => {
+    setSearchParams({ sortBy: "asc", order: "sale" });
   };
 
   return (
     <div>
       <NavBar />
       <h1>Products</h1>
+      <button onClick={sortHandler}>Sort</button>
       <ul>
         {myProducts.map((product) => (
           <li key={product.id}>
